@@ -2,6 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
+import 'package:mitch_todo/utils/customColor.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -110,11 +111,12 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Align(
                     alignment: Alignment.centerRight,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Theme.of(context).primaryColor,
-                          foregroundColor:
-                              Theme.of(context).primaryIconTheme.color,
+                    child: FilledButton.tonal(
+                      style: FilledButton.styleFrom(
+                          elevation: 2,
+                          backgroundColor: MaterialColor(0xFFB9E2BA, color),
+                          // foregroundColor:
+                          //     Theme.of(context).primaryIconTheme.color,
                           minimumSize: const Size(100, 40),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10))),
@@ -239,6 +241,7 @@ class _HomePageState extends State<HomePage> {
               itemCount: _items.length,
             ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: MaterialColor(0xFFB9E2BA, color),
         onPressed: () {
           showFormSheet(context);
         },
